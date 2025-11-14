@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>วงปี่พาทย์ไทย - Thai Pi Phat Ensemble</title>
+  <title>วงปี่พาทย์ไทย - Pi Phat Ensemble</title>
 
   <style>
-    /* --- Background Fixed --- */
+    /* -------- Global Background (Fixed) -------- */
     body {
       margin: 0;
       padding: 0;
       font-family: "Tahoma", sans-serif;
-      background-image: url("piphate-bg.jpg"); /* เปลี่ยนตรงนี้ */
+      background-image: url("piphate-bg.jpg"); /* เปลี่ยนตามภาพ */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       overflow-x: hidden;
     }
 
-    /* Semi-transparent overlay for readability */
+    /* Blurred overlay for readability */
     .overlay {
       background: rgba(255, 255, 255, 0.7);
       min-height: 100vh;
@@ -26,7 +26,7 @@
       backdrop-filter: blur(2px);
     }
 
-    /* --- Header --- */
+    /* -------- Header -------- */
     header {
       background: rgba(180, 138, 80, 0.9);
       color: white;
@@ -44,11 +44,11 @@
       padding: 20px 22px;
     }
 
-    /* --- Title Thai Style --- */
+    /* -------- Section Title -------- */
     .section-title {
       font-size: 1.6rem;
       color: #5b3208;
-      margin-top: 30px;
+      margin-top: 32px;
       font-weight: bold;
       padding-bottom: 6px;
       position: relative;
@@ -64,7 +64,7 @@
       left: 0;
     }
 
-    /* --- Instrument Cards --- */
+    /* -------- Instrument Cards -------- */
     .instrument-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -76,14 +76,13 @@
       background: rgba(255, 255, 255, 0.85);
       padding: 15px;
       border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
       border: 3px solid #d5b180;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
       position: relative;
       backdrop-filter: blur(3px);
     }
 
     .instrument-card::before {
-      /* ลายทองไทยด้านบน */
       content: "";
       position: absolute;
       top: -12px;
@@ -114,8 +113,8 @@
     .inst-buttons {
       margin-top: 12px;
       display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      gap: 8px;
     }
 
     button, a.btn {
@@ -123,10 +122,10 @@
       background: #b48a50;
       color: #fff;
       border-radius: 10px;
-      text-decoration: none;
       font-weight: bold;
       border: none;
       cursor: pointer;
+      text-decoration: none;
       transition: 0.2s;
     }
 
@@ -134,7 +133,7 @@
       background: #8d6c3a;
     }
 
-    /* --- YouTube Grid --- */
+    /* -------- YouTube Section -------- */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -149,6 +148,7 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.25);
     }
 
+    /* -------- Footer -------- */
     footer {
       margin-top: 30px;
       text-align: center;
@@ -158,7 +158,6 @@
       font-size: 1.1rem;
       backdrop-filter: blur(4px);
     }
-
   </style>
 </head>
 <body>
@@ -180,8 +179,11 @@
     <div class="instrument-card">
       <img src="example1.jpg">
       <div class="instrument-name">ระนาดเอก</div>
+
+      <audio id="ranad" src="ranad.mp3"></audio>
+
       <div class="inst-buttons">
-        <button onclick="alert('ตัวอย่างเสียงระนาดเอก')">เสียงตัวอย่าง</button>
+        <button onclick="playSound('ranad')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
       </div>
     </div>
@@ -190,8 +192,11 @@
     <div class="instrument-card">
       <img src="example2.jpg">
       <div class="instrument-name">ฆ้องวงใหญ่</div>
+
+      <audio id="kongwong" src="kongwong.mp3"></audio>
+
       <div class="inst-buttons">
-        <button onclick="alert('ตัวอย่างเสียงฆ้องวง')">เสียงตัวอย่าง</button>
+        <button onclick="playSound('kongwong')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
       </div>
     </div>
@@ -200,8 +205,11 @@
     <div class="instrument-card">
       <img src="example3.jpg">
       <div class="instrument-name">ปี่ใน</div>
+
+      <audio id="pinai" src="pinai.mp3"></audio>
+
       <div class="inst-buttons">
-        <button onclick="alert('ตัวอย่างเสียงปี่ใน')">เสียงตัวอย่าง</button>
+        <button onclick="playSound('pinai')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
       </div>
     </div>
@@ -220,9 +228,22 @@
 </div>
 
 <footer>
-  © 2025 Thai Pi Phat Ensemble Template
+  © 2025 Pi Phat Ensemble Educational Website
 </footer>
 
 </div>
+
+<!-- -------- JAVASCRIPT: Audio Preview -------- -->
+<script>
+function playSound(id) {
+  const audio = document.getElementById(id);
+  if (!audio) return;
+
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play();
+}
+</script>
+
 </body>
 </html>
