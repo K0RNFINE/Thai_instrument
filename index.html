@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>วงปี่พาทย์ไทย - Thai Pi Phat Ensemble</title>
+
+  <style>
+    /* --- Background Fixed --- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Tahoma", sans-serif;
+      background-image: url("piphate-bg.jpg"); /* เปลี่ยนตรงนี้ */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Semi-transparent overlay for readability */
+    .overlay {
+      background: rgba(255, 255, 255, 0.7);
+      min-height: 100vh;
+      padding-bottom: 40px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* --- Header --- */
+    header {
+      background: rgba(180, 138, 80, 0.9);
+      color: white;
+      padding: 22px;
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+      backdrop-filter: blur(4px);
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 22px;
+    }
+
+    /* --- Title Thai Style --- */
+    .section-title {
+      font-size: 1.6rem;
+      color: #5b3208;
+      margin-top: 30px;
+      font-weight: bold;
+      padding-bottom: 6px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 160px;
+      height: 4px;
+      background: linear-gradient(90deg, #b48a50, transparent);
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    /* --- Instrument Cards --- */
+    .instrument-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .instrument-card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      border: 3px solid #d5b180;
+      position: relative;
+      backdrop-filter: blur(3px);
+    }
+
+    .instrument-card::before {
+      /* ลายทองไทยด้านบน */
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 22px;
+      background: url("thai-pattern-gold.png") no-repeat center;
+      background-size: contain;
+      opacity: 0.85;
+    }
+
+    .instrument-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #b48a50;
+    }
+
+    .instrument-name {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #48300d;
+    }
+
+    .inst-buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button, a.btn {
+      padding: 8px 14px;
+      background: #b48a50;
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover, a.btn:hover {
+      background: #8d6c3a;
+    }
+
+    /* --- YouTube Grid --- */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      padding: 15px;
+      background: rgba(180, 138, 80, 0.9);
+      color: white;
+      font-size: 1.1rem;
+      backdrop-filter: blur(4px);
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="overlay">
+
+<header>
+  วงปี่พาทย์ไทย (Thai Pi Phat Ensemble)
+</header>
+
+<div class="content">
+
+  <!-- SECTION: INSTRUMENTS -->
+  <div class="section-title">🎼 เครื่องดนตรีในวงปี่พาทย์</div>
+
+  <div class="instrument-grid">
+
+    <!-- Instrument 1 -->
+    <div class="instrument-card">
+      <img src="example1.jpg">
+      <div class="instrument-name">ระนาดเอก</div>
+      <div class="inst-buttons">
+        <button onclick="alert('ตัวอย่างเสียงระนาดเอก')">เสียงตัวอย่าง</button>
+        <a class="btn" href="#">Simulator</a>
+      </div>
+    </div>
+
+    <!-- Instrument 2 -->
+    <div class="instrument-card">
+      <img src="example2.jpg">
+      <div class="instrument-name">ฆ้องวงใหญ่</div>
+      <div class="inst-buttons">
+        <button onclick="alert('ตัวอย่างเสียงฆ้องวง')">เสียงตัวอย่าง</button>
+        <a class="btn" href="#">Simulator</a>
+      </div>
+    </div>
+
+    <!-- Instrument 3 -->
+    <div class="instrument-card">
+      <img src="example3.jpg">
+      <div class="instrument-name">ปี่ใน</div>
+      <div class="inst-buttons">
+        <button onclick="alert('ตัวอย่างเสียงปี่ใน')">เสียงตัวอย่าง</button>
+        <a class="btn" href="#">Simulator</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION: VIDEOS -->
+  <div class="section-title">📺 วิดีโอตัวอย่างวงปี่พาทย์</div>
+
+  <div class="video-grid">
+    <iframe src="https://www.youtube.com/embed/VIDEO1"></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO2"></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO3"></iframe>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Thai Pi Phat Ensemble Template
+</footer>
+
+</div>
+</body>
+</html>
