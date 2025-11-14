@@ -11,24 +11,24 @@
       margin: 0;
       padding: 0;
       font-family: "Tahoma", sans-serif;
-      background-image: url("piphate-bg.jpg"); /* เปลี่ยนตามภาพ */
+      background-image: url("1.png"); /* ตามที่คุณต้องการ */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       overflow-x: hidden;
     }
 
-    /* Blurred overlay for readability */
+    /* Semi-transparent overlay (Gray style) */
     .overlay {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(230, 230, 230, 0.75); /* เทาอ่อน */
       min-height: 100vh;
       padding-bottom: 40px;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(3px);
     }
 
     /* -------- Header -------- */
     header {
-      background: rgba(180, 138, 80, 0.9);
+      background: rgba(90, 90, 90, 0.9);
       color: white;
       padding: 22px;
       text-align: center;
@@ -46,8 +46,8 @@
 
     /* -------- Section Title -------- */
     .section-title {
-      font-size: 1.6rem;
-      color: #5b3208;
+      font-size: 1.55rem;
+      color: #2c2c2c;
       margin-top: 32px;
       font-weight: bold;
       padding-bottom: 6px;
@@ -58,30 +58,16 @@
       content: "";
       width: 160px;
       height: 4px;
-      background: linear-gradient(90deg, #b48a50, transparent);
+      background: linear-gradient(90deg, #777, transparent);
       position: absolute;
       bottom: -4px;
       left: 0;
     }
 
-    /* -------- About + History -------- */
-    .about-box {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 18px 20px;
-      margin-top: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-      border: 3px solid #d5b180;
-      backdrop-filter: blur(3px);
-      line-height: 1.7rem;
-      font-size: 1.05rem;
-      color: #3a250b;
-    }
-
     /* -------- Instrument Cards -------- */
     .instrument-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
       gap: 22px;
       margin-top: 20px;
     }
@@ -90,23 +76,9 @@
       background: rgba(255, 255, 255, 0.85);
       padding: 15px;
       border-radius: 16px;
-      border: 3px solid #d5b180;
+      border: 3px solid #adadad;
       box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-      position: relative;
       backdrop-filter: blur(3px);
-    }
-
-    .instrument-card::before {
-      content: "";
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 22px;
-      background: url("thai-pattern-gold.png") no-repeat center;
-      background-size: contain;
-      opacity: 0.85;
     }
 
     .instrument-card img {
@@ -114,14 +86,21 @@
       height: 160px;
       object-fit: cover;
       border-radius: 12px;
-      border: 2px solid #b48a50;
+      border: 2px solid #888;
     }
 
     .instrument-name {
       font-size: 1.3rem;
       margin-top: 10px;
       font-weight: bold;
-      color: #48300d;
+      color: #2d2d2d;
+    }
+
+    .inst-about, .inst-history {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.55rem;
     }
 
     .inst-buttons {
@@ -133,7 +112,7 @@
 
     button, a.btn {
       padding: 8px 14px;
-      background: #b48a50;
+      background: #666;
       color: #fff;
       border-radius: 10px;
       font-weight: bold;
@@ -144,7 +123,7 @@
     }
 
     button:hover, a.btn:hover {
-      background: #8d6c3a;
+      background: #444;
     }
 
     /* -------- YouTube Section -------- */
@@ -167,7 +146,7 @@
       margin-top: 30px;
       text-align: center;
       padding: 15px;
-      background: rgba(180, 138, 80, 0.9);
+      background: rgba(90, 90, 90, 0.9);
       color: white;
       font-size: 1.1rem;
       backdrop-filter: blur(4px);
@@ -177,30 +156,15 @@
 <body>
 
 <div class="overlay">
+
 <header>
   วงปี่พาทย์ไทย (Thai Pi Phat Ensemble)
 </header>
 
 <div class="content">
 
-  <!-- SECTION: ABOUT -->
-  <div class="section-title">📜 เกี่ยวกับวงปี่พาทย์</div>
-  <div class="about-box">
-    (เพิ่มเนื้อหาตรงนี้)  
-    ตัวอย่าง: วงปี่พาทย์เป็นวงดนตรีไทยดั้งเดิม มีบทบาทสำคัญในการบรรเลงประกอบพิธีกรรม งานมงคล  
-    งานราชสำนัก และการแสดงโขน–ละคร เป็นต้น
-  </div>
-
-  <!-- SECTION: HISTORY -->
-  <div class="section-title">🏛 ประวัติความเป็นมา</div>
-  <div class="about-box">
-    (เพิ่มเนื้อหาตรงนี้)  
-    ตัวอย่าง: วงปี่พาทย์มีรากเหง้ามาจากยุคกรุงศรีอยุธยา พัฒนาเครื่องดนตรีและแนวการบรรเลงต่อเนื่อง  
-    จนกลายเป็นวงดนตรีไทยที่มีเอกลักษณ์โดดเด่นที่สุดวงหนึ่ง
-  </div>
-
-  <!-- SECTION: INSTRUMENTS -->
-  <div class="section-title">🎼 เครื่องดนตรีในวงปี่พาทย์</div>
+  <!-- SECTION: INSTRUMENTS WITH INFO -->
+  <div class="section-title">🎼 เครื่องดนตรีในวงปี่พาทย์ (พร้อมข้อมูล)</div>
 
   <div class="instrument-grid">
 
@@ -208,7 +172,12 @@
     <div class="instrument-card">
       <img src="example1.jpg">
       <div class="instrument-name">ระนาดเอก</div>
+
+      <div class="inst-about"><b>About:</b> ใส่คำอธิบายของระนาดเอกตรงนี้…</div>
+      <div class="inst-history"><b>History:</b> ใส่ประวัติของระนาดเอกตรงนี้…</div>
+
       <audio id="ranad" src="ranad.mp3"></audio>
+
       <div class="inst-buttons">
         <button onclick="playSound('ranad')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
@@ -219,7 +188,12 @@
     <div class="instrument-card">
       <img src="example2.jpg">
       <div class="instrument-name">ฆ้องวงใหญ่</div>
+
+      <div class="inst-about"><b>About:</b> ใส่คำอธิบายของฆ้องวงใหญ่ตรงนี้…</div>
+      <div class="inst-history"><b>History:</b> ใส่ประวัติของฆ้องวงใหญ่ตรงนี้…</div>
+
       <audio id="kongwong" src="kongwong.mp3"></audio>
+
       <div class="inst-buttons">
         <button onclick="playSound('kongwong')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
@@ -230,7 +204,12 @@
     <div class="instrument-card">
       <img src="example3.jpg">
       <div class="instrument-name">ปี่ใน</div>
+
+      <div class="inst-about"><b>About:</b> ใส่คำอธิบายของปี่ในตรงนี้…</div>
+      <div class="inst-history"><b>History:</b> ใส่ประวัติของปี่ในตรงนี้…</div>
+
       <audio id="pinai" src="pinai.mp3"></audio>
+
       <div class="inst-buttons">
         <button onclick="playSound('pinai')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
@@ -240,7 +219,8 @@
   </div>
 
   <!-- SECTION: VIDEOS -->
-  <div class="section-title">📺 วิดีโอตัวอย่างวงปี่พาทย์</div>
+  <div class="section-title">📺 วิดีโอตัวอย่างการบรรเลงวงปี่พาทย์</div>
+
   <div class="video-grid">
     <iframe src="https://www.youtube.com/embed/VIDEO1"></iframe>
     <iframe src="https://www.youtube.com/embed/VIDEO2"></iframe>
