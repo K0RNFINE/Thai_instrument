@@ -64,6 +64,20 @@
       left: 0;
     }
 
+    /* -------- About + History -------- */
+    .about-box {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 18px 20px;
+      margin-top: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      border: 3px solid #d5b180;
+      backdrop-filter: blur(3px);
+      line-height: 1.7rem;
+      font-size: 1.05rem;
+      color: #3a250b;
+    }
+
     /* -------- Instrument Cards -------- */
     .instrument-grid {
       display: grid;
@@ -163,12 +177,27 @@
 <body>
 
 <div class="overlay">
-
 <header>
   วงปี่พาทย์ไทย (Thai Pi Phat Ensemble)
 </header>
 
 <div class="content">
+
+  <!-- SECTION: ABOUT -->
+  <div class="section-title">📜 เกี่ยวกับวงปี่พาทย์</div>
+  <div class="about-box">
+    (เพิ่มเนื้อหาตรงนี้)  
+    ตัวอย่าง: วงปี่พาทย์เป็นวงดนตรีไทยดั้งเดิม มีบทบาทสำคัญในการบรรเลงประกอบพิธีกรรม งานมงคล  
+    งานราชสำนัก และการแสดงโขน–ละคร เป็นต้น
+  </div>
+
+  <!-- SECTION: HISTORY -->
+  <div class="section-title">🏛 ประวัติความเป็นมา</div>
+  <div class="about-box">
+    (เพิ่มเนื้อหาตรงนี้)  
+    ตัวอย่าง: วงปี่พาทย์มีรากเหง้ามาจากยุคกรุงศรีอยุธยา พัฒนาเครื่องดนตรีและแนวการบรรเลงต่อเนื่อง  
+    จนกลายเป็นวงดนตรีไทยที่มีเอกลักษณ์โดดเด่นที่สุดวงหนึ่ง
+  </div>
 
   <!-- SECTION: INSTRUMENTS -->
   <div class="section-title">🎼 เครื่องดนตรีในวงปี่พาทย์</div>
@@ -179,9 +208,7 @@
     <div class="instrument-card">
       <img src="example1.jpg">
       <div class="instrument-name">ระนาดเอก</div>
-
       <audio id="ranad" src="ranad.mp3"></audio>
-
       <div class="inst-buttons">
         <button onclick="playSound('ranad')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
@@ -192,9 +219,7 @@
     <div class="instrument-card">
       <img src="example2.jpg">
       <div class="instrument-name">ฆ้องวงใหญ่</div>
-
       <audio id="kongwong" src="kongwong.mp3"></audio>
-
       <div class="inst-buttons">
         <button onclick="playSound('kongwong')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
@@ -205,9 +230,7 @@
     <div class="instrument-card">
       <img src="example3.jpg">
       <div class="instrument-name">ปี่ใน</div>
-
       <audio id="pinai" src="pinai.mp3"></audio>
-
       <div class="inst-buttons">
         <button onclick="playSound('pinai')">▶ เล่นเสียงตัวอย่าง</button>
         <a class="btn" href="#">Simulator</a>
@@ -218,7 +241,6 @@
 
   <!-- SECTION: VIDEOS -->
   <div class="section-title">📺 วิดีโอตัวอย่างวงปี่พาทย์</div>
-
   <div class="video-grid">
     <iframe src="https://www.youtube.com/embed/VIDEO1"></iframe>
     <iframe src="https://www.youtube.com/embed/VIDEO2"></iframe>
@@ -230,15 +252,13 @@
 <footer>
   © 2025 Pi Phat Ensemble Educational Website
 </footer>
-
 </div>
 
-<!-- -------- JAVASCRIPT: Audio Preview -------- -->
+<!-- ---------- AUDIO SCRIPT ----------- -->
 <script>
 function playSound(id) {
   const audio = document.getElementById(id);
   if (!audio) return;
-
   audio.pause();
   audio.currentTime = 0;
   audio.play();
