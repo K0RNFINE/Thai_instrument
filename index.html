@@ -6,48 +6,46 @@
   <title>วงปี่พาทย์ไทย - Pi Phat Ensemble</title>
 
 <style>
-/* -------- Global Background (Fixed) -------- */
+/* -------- Global Background Gray + Thai Theme -------- */
 body {
   margin: 0;
   padding: 0;
   font-family: "Tahoma", sans-serif;
 
-  /* พื้นหลังเทาเรียบ */
-  background: #5a5a5a;
+  background-color: #5a5a5a; /* พื้นหลังเทาเข้ม */
 
-  /* ภาพ 1.png อยู่กลาง FIXED ไม่เลื่อน */
+  /* รูป 1.png อยู่กึ่งกลาง FIXED ไม่เลื่อน */
   background-image: url("1.png");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 750px;         /* ปรับขนาดภาพให้คงที่ */
-  background-attachment: fixed;   /* อยู่กับที่ */
-  overflow-x: hidden;
+  background-position: center top 80px; /* ไม่ทับ header */
+  background-size: 700px;
+  background-attachment: fixed;
 }
 
-/* ชั้น overlay ละมุนแบบไทย ไม่ทึบ */
+/* ชั้น overlay เดิม — คง layout 100% */
 .overlay {
-  background: rgba(250, 240, 218, 0.70); /* โทนครีมไทย */
+  background: rgba(255, 249, 234, 0.70); /* โทนครีมไทย */
   min-height: 100vh;
   padding-bottom: 40px;
-  backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(2px);
 }
 
 /* -------- Header (ไทยโทนกรมท่า + ทอง) -------- */
 header {
-  background: linear-gradient(90deg, #0F2B5B, #1A3A78);
-  color: #F7D774; /* ทองอ่อน */
+  background: linear-gradient(90deg, #0F2B5B, #1C3C7B);
+  color: #F4D96C; /* ทอง */
   padding: 22px;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
   border-bottom: 4px solid #D4A017;
 }
 
-/* -------- Section Title -------- */
+/* -------- Section Title (ไทยโทนกรมท่า + ทอง) -------- */
 .section-title {
   font-size: 1.55rem;
-  color: #0F2B5B;
+  color: #0F2B5B;  /* กรมท่า */
   margin-top: 32px;
   font-weight: bold;
   padding-bottom: 6px;
@@ -58,31 +56,31 @@ header {
   content: "";
   width: 150px;
   height: 4px;
-  background: linear-gradient(90deg, #D4A017, transparent); /* ขีดสีทอง */
+  background: linear-gradient(90deg, #D4A017, transparent); /* เส้นทองไทย */
   position: absolute;
   bottom: -4px;
   left: 0;
 }
 
-/* -------- Info Box (พื้นหลังแบบกระดาษไทย) -------- */
+/* -------- Info Box (ครีมไทย + ทอง) -------- */
 .info-box {
-  background: rgba(255, 249, 234, 0.9); /* กระดาษไทย */
+  background: rgba(255, 249, 234, 0.92); /* กระดาษไทย */
   padding: 18px;
   border-radius: 16px;
   border: 2px solid #D4A017;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
   line-height: 1.65rem;
-  color: #3a2e1f; /* น้ำตาลไทย */
+  color: #3a2e1f;
   margin-top: 15px;
 }
 
-/* -------- Instrument Cards (ทอง + ครีม) -------- */
+/* -------- Instrument Cards (ครีมไทยเหมือนเดิม) -------- */
 .instrument-card {
-  background: #fff8e8; /* กระดาษไทยอ่อน */
+  background: #fff8e8;
   border: 3px solid #C89A2B; /* ทองหม่น */
   padding: 14px;
   border-radius: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 .instrument-card img {
@@ -97,11 +95,12 @@ header {
   font-size: 1.3rem;
   margin-top: 10px;
   font-weight: bold;
-  color: #772E1D; /* โทนแดงไทย */
+  color: #772E1D;
 }
 
-/* ปุ่มไทยโทน */
-button, a.btn {
+/* -------- Buttons (กรมท่าไทย) -------- */
+button,
+a.btn {
   padding: 8px 14px;
   background: #0F2B5B;
   color: #fff;
@@ -112,8 +111,18 @@ button, a.btn {
   text-decoration: none;
   transition: 0.2s;
 }
-button:hover, a.btn:hover {
-  background: #091C3A;
+
+button:hover,
+a.btn:hover {
+  background: #0A1D3D;
+}
+
+/* -------- Video iframe (ไม่มีการเปลี่ยน Layout) -------- */
+iframe {
+  width: 100%;
+  height: 220px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
 }
 
 /* -------- Footer -------- */
@@ -122,7 +131,7 @@ footer {
   text-align: center;
   padding: 15px;
   background: #0F2B5B;
-  color: #f7d774;
+  color: #F7D774;
   font-size: 1.1rem;
   border-top: 4px solid #D4A017;
 }
