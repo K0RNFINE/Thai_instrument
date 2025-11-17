@@ -5,171 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>วงปี่พาทย์ไทย - Pi Phat Ensemble</title>
 
-  <style>
-    /* -------- Global Background (Fixed) -------- */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Tahoma", sans-serif;
-      background-image: url("1.png");  /* เปลี่ยนชื่อไฟล์ภาพได้ */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      overflow-x: hidden;
-    }
+<style>
+/* -------- Global Background (Fixed) -------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Tahoma", sans-serif;
 
-    /* ชั้นเทาใสด้านบน เพื่อให้อ่านตัวหนังสือง่าย */
-    .overlay {
-      background: rgba(220, 220, 220, 0.75);
-      min-height: 100vh;
-      padding-bottom: 40px;
-      backdrop-filter: blur(3px);
-    }
+  /* พื้นหลังเทาเรียบ */
+  background: #5a5a5a;
 
-    /* -------- Header -------- */
-    header {
-      background: rgba(80, 80, 80, 0.9);
-      color: white;
-      padding: 22px;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
+  /* ภาพ 1.png อยู่กลาง FIXED ไม่เลื่อน */
+  background-image: url("1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 750px;         /* ปรับขนาดภาพให้คงที่ */
+  background-attachment: fixed;   /* อยู่กับที่ */
+  overflow-x: hidden;
+}
 
-    .content {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
+/* ชั้น overlay ละมุนแบบไทย ไม่ทึบ */
+.overlay {
+  background: rgba(250, 240, 218, 0.70); /* โทนครีมไทย */
+  min-height: 100vh;
+  padding-bottom: 40px;
+  backdrop-filter: blur(2.5px);
+}
 
-    /* -------- Section Title -------- */
-    .section-title {
-      font-size: 1.55rem;
-      color: #2b2b2b;
-      margin-top: 32px;
-      font-weight: bold;
-      padding-bottom: 6px;
-      position: relative;
-    }
+/* -------- Header (ไทยโทนกรมท่า + ทอง) -------- */
+header {
+  background: linear-gradient(90deg, #0F2B5B, #1A3A78);
+  color: #F7D774; /* ทองอ่อน */
+  padding: 22px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  border-bottom: 4px solid #D4A017;
+}
 
-    .section-title::after {
-      content: "";
-      width: 150px;
-      height: 4px;
-      background: linear-gradient(90deg, #666, transparent);
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-    }
+/* -------- Section Title -------- */
+.section-title {
+  font-size: 1.55rem;
+  color: #0F2B5B;
+  margin-top: 32px;
+  font-weight: bold;
+  padding-bottom: 6px;
+  position: relative;
+}
 
-    /* -------- Info Box (ที่มาของวง) -------- */
-    .info-box {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 18px;
-      border-radius: 16px;
-      border: 3px solid #bfbfbf;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-      line-height: 1.65rem;
-      color: #3a3a3a;
-      margin-top: 15px;
-    }
+.section-title::after {
+  content: "";
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, #D4A017, transparent); /* ขีดสีทอง */
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
 
-    /* -------- Instrument Cards -------- */
-    .instrument-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-      gap: 22px;
-      margin-top: 20px;
-    }
+/* -------- Info Box (พื้นหลังแบบกระดาษไทย) -------- */
+.info-box {
+  background: rgba(255, 249, 234, 0.9); /* กระดาษไทย */
+  padding: 18px;
+  border-radius: 16px;
+  border: 2px solid #D4A017;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  line-height: 1.65rem;
+  color: #3a2e1f; /* น้ำตาลไทย */
+  margin-top: 15px;
+}
 
-    .instrument-card {
-      background: rgba(255, 255, 255, 0.9);
-      border: 3px solid #aaa;
-      padding: 14px;
-      border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-    }
+/* -------- Instrument Cards (ทอง + ครีม) -------- */
+.instrument-card {
+  background: #fff8e8; /* กระดาษไทยอ่อน */
+  border: 3px solid #C89A2B; /* ทองหม่น */
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
 
-    .instrument-card img {
-      width: 100%;
-      height: 165px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid #818181;
-    }
+.instrument-card img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #A67C2E;
+}
 
-    .instrument-name {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #242424;
-    }
+.instrument-name {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #772E1D; /* โทนแดงไทย */
+}
 
-    .inst-about,
-    .inst-history {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.55rem;
-    }
+/* ปุ่มไทยโทน */
+button, a.btn {
+  padding: 8px 14px;
+  background: #0F2B5B;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+button:hover, a.btn:hover {
+  background: #091C3A;
+}
 
-    .inst-about b,
-    .inst-history b {
-      color: #222;
-    }
-
-    .inst-buttons {
-      margin-top: 12px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    button,
-    a.btn {
-      padding: 8px 14px;
-      background: #666;
-      color: #fff;
-      border-radius: 10px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.2s;
-      font-size: 0.9rem;
-    }
-
-    button:hover,
-    a.btn:hover {
-      background: #444;
-    }
-
-    /* -------- YouTube Section -------- */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 220px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    }
-
-    /* -------- Footer -------- */
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      padding: 15px;
-      background: rgba(90, 90, 90, 0.9);
-      color: white;
-      font-size: 1.1rem;
-    }
-  </style>
+/* -------- Footer -------- */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px;
+  background: #0F2B5B;
+  color: #f7d774;
+  font-size: 1.1rem;
+  border-top: 4px solid #D4A017;
+}
+</style>
 </head>
 <body>
 
